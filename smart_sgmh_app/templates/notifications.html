@@ -1,0 +1,2 @@
+{% extends 'base.html' %}{% block body %}<h1 style="font-size:2rem">Messages</h1><p class="m">Messages sent to you about registration and appointments. When the hospital's SMS service is connected, the same text also reaches your phone.</p>
+<div class="c">{% for r in rows %}<div style="padding:10px 0;border-bottom:1px solid var(--bd)"><div class="m">{{ r.ts }}{% if r.appt_code %} &middot; <a href="/appt/{{ r.appt_code }}">{{ r.appt_code }}</a>{% endif %}</div><div>{{ r.text }}</div></div>{% else %}<p>No messages yet.</p>{% endfor %}</div>{% endblock %}
